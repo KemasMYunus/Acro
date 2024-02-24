@@ -56,6 +56,8 @@ class VoteActivity : AppCompatActivity() {
             menu.setOnItemSelectedListener {
                 if(it == R.id.home){
                     startActivity(Intent(this@VoteActivity,MainActivity::class.java))
+                    overridePendingTransition(0, 0) // Menghilangkan animasi
+                    finish()
                 }
             }
             var list:MutableList<PlayerModel> = loadData()

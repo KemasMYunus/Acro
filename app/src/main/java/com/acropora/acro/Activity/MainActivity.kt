@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
             menu.setOnItemSelectedListener {
                 if(it == R.id.vote){
                     startActivity(Intent(this@MainActivity,VoteActivity::class.java))
+                    overridePendingTransition(0, 0) // Menghilangkan animasi
+                    finish()
                 }
             }
 
