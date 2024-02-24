@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txtRank"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="Rank"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/txtClub"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="Item NameLot of so somany names that appear to be there is no there is no way   "
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/txtGame"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="Year"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/txtWin"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="Cost (in millions)"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/txtLose"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="Year"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/txtPoint"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="Year"
+        android:textSize="10sp" />
+
+</LinearLayout>

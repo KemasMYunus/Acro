@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:title="home"
+        android:icon="@drawable/bottom_btn1"
+        app:cnb_iconColor="@color/white"
+        app:cnb_backgroundColor="@color/blue"/>
+    <item
+        android:id="@+id/vote"
+        android:title="vote"
+        android:icon="@drawable/bottom_btn2"
+        app:cnb_iconColor="@color/white"
+        app:cnb_backgroundColor="@color/blue"/>
+    <item
+        android:id="@+id/profile"
+        android:title="profil"
+        android:icon="@drawable/bottom_btn4"
+        app:cnb_iconColor="@color/white"
+        app:cnb_backgroundColor="@color/blue"/>
+</menu>
