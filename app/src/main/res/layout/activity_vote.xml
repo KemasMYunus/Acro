@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Activity.VoteActivity">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#a0c5ff">
@@ -322,7 +322,7 @@
                 android:paddingBottom="80dp" />
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <com.ismaeldivita.chipnavigation.ChipNavigationBar
         android:id="@+id/menu"
