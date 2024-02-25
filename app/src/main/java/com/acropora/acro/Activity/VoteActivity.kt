@@ -59,6 +59,11 @@ class VoteActivity : AppCompatActivity() {
                     overridePendingTransition(0, 0) // Menghilangkan animasi
                     finish()
                 }
+                if(it == R.id.setting){
+                    startActivity(Intent(this@VoteActivity,SettingActivity::class.java))
+                    overridePendingTransition(0, 0) // Menghilangkan animasi
+                    finish()
+                }
             }
             var list:MutableList<PlayerModel> = loadData()
             list.removeAt(0)
