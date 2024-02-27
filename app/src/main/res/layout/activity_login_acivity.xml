@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/logregbackground"
     tools:context=".Activity.LoginAcivity">
 
     <LinearLayout
@@ -14,6 +14,7 @@
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
         android:paddingLeft="32dp"
+
         android:paddingRight="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +24,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/white"
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
@@ -41,7 +42,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/black"
+            android:textColorHint="@color/white"
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
@@ -72,7 +73,7 @@
                 android:fontFamily="@font/calibri"
                 android:text="Sign up"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -84,7 +85,7 @@
                 android:fontFamily="@font/calibri"
                 android:text="Sign in"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -98,6 +99,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/calibri"
             android:text="Forgot Password?"
+            android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="16sp" />
 
