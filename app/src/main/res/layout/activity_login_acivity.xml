@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/white"
     tools:context=".Activity.LoginAcivity">
 
     <LinearLayout
@@ -23,7 +23,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#96ffffff"
+            android:textColorHint="@color/black"
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
@@ -35,14 +35,13 @@
                 android:hint="Nama"
                 android:inputType="text"
                 android:maxLines="1"
-                android:textColor="@android:color/white"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#96ffffff"
+            android:textColorHint="@color/black"
             android:theme="@style/EditScreenTextInputLayoutStyle">
 
             <EditText
@@ -54,7 +53,6 @@
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:textColor="@android:color/white"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,7 +72,7 @@
                 android:fontFamily="@font/calibri"
                 android:text="Sign up"
                 android:textAllCaps="false"
-                android:textColor="#96ffffff"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -86,7 +84,7 @@
                 android:fontFamily="@font/calibri"
                 android:text="Sign in"
                 android:textAllCaps="false"
-                android:textColor="#96ffffff"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -101,7 +99,6 @@
             android:fontFamily="@font/calibri"
             android:text="Forgot Password?"
             android:textAlignment="center"
-            android:textColor="#96ffffff"
             android:textSize="16sp" />
 
 
