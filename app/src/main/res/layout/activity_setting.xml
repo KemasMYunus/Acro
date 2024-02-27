@@ -45,27 +45,29 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            android:padding="15dp">
+            android:orientation="vertical">
             <RelativeLayout
-                android:layout_marginTop="10dp"
+                android:id="@+id/btnEditProfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
-                    android:id="@+id/iconasa"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/icon5"
-                    android:padding="12dp"/>
+                    android:id="@+id/iconSettingEditProfil"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/piceditprofil" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="12dp"
                     android:layout_centerVertical="true"
-                    android:text="coba lagi"
+                    android:text="edit profil"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:layout_toEndOf="@id/iconasa"/>
+                    android:layout_toEndOf="@id/iconSettingEditProfil"/>
             </RelativeLayout>
         </LinearLayout>
         <LinearLayout
@@ -74,29 +76,30 @@
             android:background="@drawable/btn_background_1"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            android:padding="15dp">
+            android:layout_marginTop="15dp"
+            android:orientation="vertical">
             <RelativeLayout
                 android:id="@+id/tombolLogout"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
-                    android:id="@+id/iconasa2"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/icon5"
-                    android:padding="12dp"/>
+                    android:id="@+id/iconSettingLogout"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/piclogout" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="12dp"
                     android:layout_centerVertical="true"
                     android:text="logout"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:layout_toEndOf="@id/iconasa2"/>
+                    android:layout_toEndOf="@id/iconSettingLogout"/>
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
