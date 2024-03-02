@@ -18,33 +18,45 @@ import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.acropora.acro.Adapter.ImageAdapter
+import com.google.firebase.auth.FirebaseAuth
 import kotlin.math.abs
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-    private lateinit var  viewPager2: ViewPager2
-    private lateinit var handler : Handler
-    private lateinit var imageList:ArrayList<Int>
+    private lateinit var viewPager2: ViewPager2
+    private lateinit var handler: Handler
+    private lateinit var imageList: ArrayList<Int>
     private lateinit var adapter: ImageAdapter
+
+    private var auth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val window : Window = this@MainActivity.window
+        val user = auth.currentUser
+        if (user != null) {
+            binding.tvName.text = user.displayName
+        } else {
+            val intent = Intent(this@MainActivity, LoginAcivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+        }
+
+        val window: Window = this@MainActivity.window
         window.statusBarColor = ContextCompat.getColor(this@MainActivity, R.color.light_blue)
 
-        binding.apply{
+        binding.apply {
             menu.setItemSelected(R.id.home)
             menu.setOnItemSelectedListener {
-                if(it == R.id.vote){
-                    startActivity(Intent(this@MainActivity,VoteActivity::class.java))
+                if (it == R.id.vote) {
+                    startActivity(Intent(this@MainActivity, VoteActivity::class.java))
                     overridePendingTransition(0, 0) // Menghilangkan animasi
                     finish()
                 }
-                if(it == R.id.setting){
-                    startActivity(Intent(this@MainActivity,SettingActivity::class.java))
+                if (it == R.id.setting) {
+                    startActivity(Intent(this@MainActivity, SettingActivity::class.java))
                     overridePendingTransition(0, 0) // Menghilangkan animasi
                     finish()
                 }
@@ -55,12 +67,14 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Coming Soon", Toast.LENGTH_SHORT).show()
 
                 // Mengubah warna latar belakang tombol menjadi lebih gelap untuk sesaat
-                matchButton.background = ContextCompat.getDrawable(applicationContext, R.drawable.btn_background_2)
+                matchButton.background =
+                    ContextCompat.getDrawable(applicationContext, R.drawable.btn_background_2)
 
                 // Tambahkan animasi kembali ke warna semula setelah waktu tertentu (opsional)
                 Handler().postDelayed({
                     // Mengembalikan warna asli tombol
-                    matchButton.background = ContextCompat.getDrawable(applicationContext, R.drawable.btn_background_1)
+                    matchButton.background =
+                        ContextCompat.getDrawable(applicationContext, R.drawable.btn_background_1)
                 }, 50L)
             }
 
@@ -68,11 +82,11 @@ class MainActivity : AppCompatActivity() {
         init()
         setUpTransformer()
 
-        viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+        viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 handler.removeCallbacks(runnable)
-                handler.postDelayed(runnable , 2000)
+                handler.postDelayed(runnable, 2000)
             }
         })
 
@@ -104,14 +118,14 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        handler.postDelayed(runnable , 2000)
+        handler.postDelayed(runnable, 2000)
     }
 
     private val runnable = Runnable {
         viewPager2.currentItem = viewPager2.currentItem + 1
     }
 
-    private fun setUpTransformer(){
+    private fun setUpTransformer() {
         val transformer = CompositePageTransformer()
         transformer.addTransformer(MarginPageTransformer(40))
         transformer.addTransformer { page, position ->
@@ -122,7 +136,7 @@ class MainActivity : AppCompatActivity() {
         viewPager2.setPageTransformer(transformer)
     }
 
-    private fun init(){
+    private fun init() {
         viewPager2 = findViewById(R.id.viewPager2)
         handler = Handler(Looper.myLooper()!!)
         imageList = ArrayList()

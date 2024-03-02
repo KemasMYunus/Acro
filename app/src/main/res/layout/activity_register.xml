@@ -21,119 +21,143 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/white"
-            android:theme="@style/EditScreenTextInputLayoutStyle">
+            android:theme="@style/EditScreenTextInputLayoutStyle"
+            app:errorEnabled="true"
+            android:hint="Nama"
+            android:paddingBottom="10dp">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableEnd="@drawable/ic_email_white_24dp"
+                android:drawableStart="@drawable/ic_person"
                 android:drawablePadding="16dp"
                 android:fontFamily="@font/calibri"
-                android:hint="Nama"
                 android:inputType="text"
                 android:maxLines="1"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/white"
-            android:theme="@style/EditScreenTextInputLayoutStyle">
+            app:errorEnabled="true"
+            android:hint="Email"
+            android:theme="@style/EditScreenTextInputLayoutStyle"
+            android:paddingBottom="10dp">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableEnd="@drawable/ic_email_white_24dp"
+                android:drawableStart="@drawable/ic_email_white_24dp"
                 android:drawablePadding="16dp"
                 android:fontFamily="@font/calibri"
-                android:hint="Telepon"
-                android:inputType="number"
+                android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/white"
-            android:theme="@style/EditScreenTextInputLayoutStyle">
+            android:theme="@style/EditScreenTextInputLayoutStyle"
+            app:errorEnabled="true"
+            android:hint="Password"
+            android:paddingBottom="10dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/white">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableEnd="@drawable/ic_lock_white_24dp"
+                android:drawableStart="@drawable/ic_lock_white_24dp"
                 android:drawablePadding="16dp"
                 android:fontFamily="@font/calibri"
-                android:hint="Password"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tlUlangPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/white"
-            android:theme="@style/EditScreenTextInputLayoutStyle">
+            android:theme="@style/EditScreenTextInputLayoutStyle"
+            android:hint="Konfirmasi Password"
+            app:errorEnabled="true"
+            android:paddingBottom="10dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/white">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUlangPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:drawableEnd="@drawable/ic_lock_white_24dp"
+                android:drawableStart="@drawable/ic_lock_white_24dp"
                 android:drawablePadding="16dp"
                 android:fontFamily="@font/calibri"
-                android:hint="Ulang Password"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
         </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonshapewhitebg"
+            android:fontFamily="@font/calibri"
+            android:text="Sign up"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:layout_marginBottom="8dp"
             android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/buttonshapewhitebg"
                 android:fontFamily="@font/calibri"
-                android:text="Sign up"
-                android:textAllCaps="false"
+                android:layout_marginEnd="6dp"
+                android:text="Sudah memiliki akun?"
+                android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
 
-            <Button
+            <TextView
+                android:id="@+id/tvSignIn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:background="@drawable/buttonshapewhitebg"
                 android:fontFamily="@font/calibri"
                 android:text="Sign in"
-                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
+                android:textSize="16sp" />
 
         </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/calibri"
-            android:text="Forgot Password?"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-
 
     </LinearLayout>
 

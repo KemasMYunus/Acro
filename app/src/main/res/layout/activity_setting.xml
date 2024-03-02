@@ -12,15 +12,15 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/ivPhotoProfile"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:src="@drawable/user1" />
+            android:src="@drawable/ic_profile" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -29,14 +29,6 @@
             android:textSize="22sp"
             android:textStyle="bold"
             android:text="Yukina Minato" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+62 89381 93849"
-            android:textSize="12sp"
-            android:textColor="#CC4E4E4E"
-            android:layout_gravity="center"/>
 
         <LinearLayout
             android:layout_width="350dp"
@@ -72,6 +64,7 @@
             </RelativeLayout>
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/llLogout"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_background_1"
@@ -81,7 +74,7 @@
             android:layout_gravity="center"
             android:orientation="vertical">
             <RelativeLayout
-                android:id="@+id/tombolLogout"
+                android:id="@+id/rlLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
