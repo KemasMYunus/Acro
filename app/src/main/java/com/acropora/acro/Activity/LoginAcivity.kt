@@ -23,6 +23,7 @@ class LoginAcivity : AppCompatActivity() {
     private lateinit var etLoginEmail: TextInputEditText
     private lateinit var tlLoginPassword: TextInputLayout
     private lateinit var etLoginPassword: TextInputEditText
+    private lateinit var tvLupaPassword: TextView
     private lateinit var tvSignUp: TextView
     private lateinit var btnSignIn: Button
     private lateinit var progressDialog: ProgressDialog
@@ -39,6 +40,7 @@ class LoginAcivity : AppCompatActivity() {
         etLoginEmail = findViewById(R.id.etLoginEmail)
         tlLoginPassword = findViewById(R.id.tlLoginPassword)
         etLoginPassword = findViewById(R.id.etLoginPassword)
+        tvLupaPassword = findViewById(R.id.tvLupaPassword)
         tvSignUp = findViewById(R.id.tvSignUp)
         btnSignIn = findViewById(R.id.btnSignIn)
         progressDialog = ProgressDialog(this)
@@ -82,6 +84,12 @@ class LoginAcivity : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+        tvLupaPassword.setOnClickListener {
+            val intent = Intent(this@LoginAcivity, LupaPasswordActivity::class.java)
+
+            startActivity(intent)
+        }
     }
 
     private fun processLogin() {
@@ -90,22 +98,29 @@ class LoginAcivity : AppCompatActivity() {
 
         progressDialog.show()
         auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener { task ->
-                progressDialog.dismiss()
-                if (task.isSuccessful)
-                {
-                    val verifikasi = auth.currentUser?.isEmailVerified
-                    if (verifikasi == true)
+            .addOnSuccessListener {
+                    val user = auth.currentUser
+
+                    if (user?.isEmailVerified == true)
                     {
                         val intent = Intent(this@LoginAcivity, MainActivity::class.java)
-                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                         startActivity(intent)
                     }
                     else
                     {
-                        Toast.makeText(this, "Verifikasi email anda terlebih dahulu", Toast.LENGTH_SHORT).show()
+                        user?.sendEmailVerification()
+                            ?.addOnSuccessListener {
+                                Toast.makeText(this, "Verifikasi email terlebih dahulu", Toast.LENGTH_SHORT).show()
+                            }
+                            ?.addOnFailureListener {
+                                Toast.makeText(this, "Email belum diverifikasi", Toast.LENGTH_SHORT).show()
+                            }
                     }
-                }
+            }
+            .addOnCompleteListener {
+                progressDialog.dismiss()
             }
     }
 
@@ -180,9 +195,10 @@ class LoginAcivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-        if (auth.currentUser != null)
+        if (auth.currentUser != null && auth.currentUser?.isEmailVerified == true)
         {
             val intent = Intent(this@LoginAcivity, MainActivity::class.java)
+
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }

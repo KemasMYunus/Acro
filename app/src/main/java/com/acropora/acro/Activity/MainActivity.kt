@@ -161,4 +161,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onStart() {
+        super.onStart()
+
+        if (auth.currentUser == null)
+        {
+            val intent = Intent(this@MainActivity, LoginAcivity::class.java)
+
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+        }
+    }
+
 }

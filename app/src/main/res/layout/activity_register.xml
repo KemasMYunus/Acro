@@ -76,7 +76,8 @@
             android:hint="Password"
             android:paddingBottom="10dp"
             app:endIconMode="password_toggle"
-            app:endIconTint="@color/white">
+            app:endIconTint="@color/white"
+            app:errorIconDrawable="@null">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
@@ -101,7 +102,8 @@
             app:errorEnabled="true"
             android:paddingBottom="10dp"
             app:endIconMode="password_toggle"
-            app:endIconTint="@color/white">
+            app:endIconTint="@color/white"
+            app:errorIconDrawable="@null">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUlangPassword"
