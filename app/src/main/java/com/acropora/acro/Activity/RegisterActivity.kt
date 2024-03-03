@@ -142,7 +142,7 @@ class RegisterActivity : AppCompatActivity() {
 
                     auth.currentUser?.sendEmailVerification()
                         ?.addOnSuccessListener {
-                            Toast.makeText(this, "Silahkan vreifikasi email terlebih dahulu", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Silahkan verifikasi email terlebih dahulu", Toast.LENGTH_SHORT).show()
                         }
 
                     val user = task.result.user

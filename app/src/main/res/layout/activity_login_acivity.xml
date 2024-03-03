@@ -54,7 +54,8 @@
             android:hint="Password"
             app:endIconMode="password_toggle"
             app:endIconTint="@color/white"
-            android:paddingBottom="10dp">
+            android:paddingBottom="10dp"
+            app:errorIconDrawable="@null">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etLoginPassword"
@@ -82,11 +83,12 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tvLupaPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/calibri"
-            android:text="Forgot Password?"
+            android:text="Lupa Password?"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:textSize="16sp" />
